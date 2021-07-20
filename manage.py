@@ -5,6 +5,9 @@ import sys
 
 
 def main():
+    port = os.environ.get('PORT', 3000)
+    from django.core.management.commands.runserver import Command as runserver
+    runserver.default_port = str(port)
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'todo_list.settings')
     try:
