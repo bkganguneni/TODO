@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5vz8#0-fo=zda)&3fj1oqepd17x3jo83gjt&yyt^pc^qt9f5gk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['notemedown.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['notemedown.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -122,12 +122,11 @@ LOGIN_URL = 'login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 django_heroku.settings(locals())
